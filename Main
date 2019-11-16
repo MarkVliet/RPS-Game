@@ -1,0 +1,46 @@
+#Mark Vlietstra, RPS game, 11-15-2019
+
+#imports
+import random
+import time
+
+#greeting
+print ("Hello, Welcome to the rock paper scissors game")
+
+#cpu generated result before being prompted
+random.seed(time) 
+compPick = random.randrange(0, 3)
+
+#prompt for selection
+print ("Enter your choice, the computer has allready chosen")
+print ("1 for rock, 2 for paper, 3 for scissors ")
+
+#variables and conversions
+userPick = input(": ")
+userGesture = "Nothing"
+
+if (userPick == "1") : userGesture = "Rock"
+if (userPick == "2") : userGesture = "Paper"
+if (userPick == "3") : userGesture = "Scissors"
+
+if (compPick == 1) : compGesture = "Rock"
+if (compPick == 2) : compGesture = "Paper"
+if (compPick == 3) : compGesture = "Scissors"
+
+#results
+print ("You have picked :", userGesture)
+print ("The Computer has picked :", compGesture)
+
+#result conclusion
+if (userGesture == "Nothing")       : print("Error")
+if (userGesture == compGesture)     : print("Tie")
+if (userPick == 3 & compPick == 2) : print("You Win")
+if (userPick == 3 & compPick == 1) : print("You Lose")
+if (userPick == 2 & compPick == 3) : print("You Lose")
+if (userPick == 2 & compPick == 1) : print("You Win")
+if (userPick == 1 & compPick == 3) : print("You Win")
+if (userPick == 1 & compPick == 2) : print("You Lose")
+
+#todo: wrap in a while loop, functionalize, QoL,
+#todo:   Stat keeping, stat saving to a txt file, GUI.
+
